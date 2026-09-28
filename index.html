@@ -4,92 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Utama - PPLG</title>
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f1115; 
-            color: #ffffff;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f17;
+            color: #f3f4f6;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
+            background-color: #111827; 
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            border: 1px solid #1f2937;
         }
 
-        .header-chat {
-            background-color: #1e2329;
-            padding: 12px 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        .profile-card {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            font-size: 16px;
+            gap: 16px;
+            background: linear-gradient(135deg, #1f2937, #111827);
+            padding: 16px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            border: 1px solid #374151;
         }
 
-        .header-chat .time {
+        .profile-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #3b82f6; 
+            background-color: #374151;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-info .name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .profile-info .school {
             font-size: 12px;
-            color: #8b939c;
+            color: #9ca3af;
+        }
+
+        .section-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-left: 4px;
         }
 
         .menu-list {
             display: flex;
             flex-direction: column;
-            gap: 12px; 
+            gap: 12px;
         }
 
         .menu-item {
-            background-color: #1a1e24; 
-            color: #ffffff;
+            background-color: #1f2937;
+            color: #e5e7eb;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
-            font-weight: bold;
+            padding: 16px;
+            border-radius: 14px;
+            font-weight: 600;
             font-size: 15px;
             display: flex;
             align-items: center;
+            border: 1px solid transparent;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item:hover {
+            background-color: #2563eb; 
+            color: #ffffff;
+            transform: translateX(4px);
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .menu-item:active {
+            transform: scale(0.98) translateX(4px);
+        }
+
+        .menu-item .icon {
+            margin-right: 14px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            border: 1px solid #2c323a; 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background-color: #111827;
+            padding: 8px;
+            border-radius: 10px;
             transition: background-color 0.2s;
         }
 
-        .menu-item:hover, .menu-item:active {
-            background-color: #2c323a;
+        .menu-item:hover .icon {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
-        .menu-item span {
-            margin-right: 10px;
-            font-size: 18px;
+        .menu-item .arrow {
+            margin-left: auto;
+            font-size: 14px;
+            color: #9ca3af;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .menu-item:hover .arrow {
+            color: #ffffff;
+            transform: translateX(2px);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-
-        <div class="header-chat">
-            <span>Pilih menu di bawah</span>
-            <span class="time">04:41</span>
+        
+        <div class="profile-card">
+            <img class="profile-img" src="C:\UBIG\portofolio\danendra_portofolio.jpg" alt="Foto Profil">
+            <div class="profile-info">
+                <span class="name">Danendra Fadhil Abiyu.H</span>
+                <span class="school">SMKN 1 Kepanjen • PPLG</span>
+            </div>
         </div>
 
+        <p class="section-title">Menu Navigasi</p>
+        
         <div class="menu-list">
-
-            <h1>TEST HALAMAN INDEX</h1>
-            <a href="form_biodata.html" class="menu-item"><span>📊</span> Form Biodata</a>
-            <a href="hasil_biodata.html" class="menu-item"><span>📋</span> Hasil Biodata</a>
-            <a href="tabel.html" class="menu-item"><span>🔎</span> Tabel</a>
-            <!--<a href="#" class="menu-item"><span>🚩</span> Cek Kecurigaan Hari Ini</a>
-            <a href="#" class="menu-item"><span>📍</span> Kunci Lokasi PKL</a>
-            <a href="#" class="menu-item"><span>📊</span> Cek Kehadiran Bimbingan PKL</a>
-            <a href="#" class="menu-item"><span>📋</span> Pending Approval PKL</a>
-            <a href="#" class="menu-item"><span>📔</span> Cek Jurnal Bimbingan PKL</a>-->
+            <a href="form_biodata.html" class="menu-item">
+                <span class="icon">📊</span> 
+                <span>Form Biodata</span>
+                <span class="arrow">➔</span>
+            </a>
             
-            <a href="https://github.com/danendrafadhil?tab=repositories" class="menu-item"><span>🌐</span> Ke Web</a>
+            <a href="hasil_biodata.html" class="menu-item">
+                <span class="icon">📋</span> 
+                <span>Hasil Biodata</span>
+                <span class="arrow">➔</span>
+            </a>
+            
+            <a href="tabel.html" class="menu-item">
+                <span class="icon">🔎</span> 
+                <span>Tabel Data</span>
+                <span class="arrow">➔</span>
+            </a>
+            
+            <a href="https://github.com/danendrafadhil?tab=repositories" class="menu-item" target="_blank">
+                <span class="icon">🌐</span> 
+                <span>Kunjungi GitHub</span>
+                <span class="arrow">➔</span>
+            </a>
         </div>
 
     </div>
